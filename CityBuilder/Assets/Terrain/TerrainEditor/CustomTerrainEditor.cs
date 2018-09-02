@@ -49,6 +49,9 @@ public class CustomTerrainEditor : Editor {
     SerializedProperty erosionDroplets;
     SerializedProperty erosionSpringsPerDroplet;
     SerializedProperty erosionType;
+    GUITableState vegetationRules;
+    SerializedProperty vegetationMaxTrees;
+    SerializedProperty vegetationTreeSpacing;
 
     //fold outs --------
     bool showRandom = false;
@@ -61,6 +64,7 @@ public class CustomTerrainEditor : Editor {
     bool showSplatMaps = false;
     bool showWater = false;
     bool showErosion = false;
+    bool showVegetation = false;
 
     void OnEnable()
     {
@@ -102,6 +106,8 @@ public class CustomTerrainEditor : Editor {
         erosionDroplets = serializedObject.FindProperty("erosionDroplets");
         erosionSpringsPerDroplet = serializedObject.FindProperty("erosionSpringsPerDroplet");
         erosionType = serializedObject.FindProperty("erosionType");
+        vegetationMaxTrees = serializedObject.FindProperty("vegetationMaxTrees");
+        vegetationTreeSpacing = serializedObject.FindProperty("vegetationTreeSpacing");
     }
 
     // Updates the Editor GUI
@@ -244,7 +250,7 @@ public class CustomTerrainEditor : Editor {
             EditorGUILayout.IntSlider(erosionDroplets, 100, 6000, "Droplets");
             EditorGUILayout.IntSlider(erosionSpringsPerDroplet, 1, 5, "Springs");
             EditorGUILayout.Slider(erosionStrength, 0.001f, 0.1f, "Strength");
-            EditorGUILayout.Slider(erosionSolubility, 0.001f, 1f, "Solubility");
+            EditorGUILayout.Slider(erosionSolubility, 0.0001f, 0.1f, "Solubility");
             if (GUILayout.Button("Erode"))
             {
                 terrain.Erode();
@@ -292,6 +298,10 @@ public class CustomTerrainEditor : Editor {
             EditorGUILayout.PropertyField(waterObject);
             EditorGUILayout.PropertyField(shoreLineMaterial);
             EditorGUILayout.Slider(waterHeight, 0, 1, "Water Height");
+            if(GUILayout.Button("River"))
+            {
+                terrain.River();
+            }
             if (GUILayout.Button("Set Water"))
             {
                 terrain.SetWater();
@@ -299,6 +309,32 @@ public class CustomTerrainEditor : Editor {
             }
 
 
+        }
+
+        showVegetation = EditorGUILayout.Foldout(showVegetation, "Vegetation");
+        if (showVegetation)
+        {
+            EditorGUILayout.LabelField("", GUI.skin.horizontalSlider);
+            GUILayout.Label("Set Vegetation", EditorStyles.boldLabel);
+            EditorGUILayout.IntSlider(vegetationMaxTrees, 100, 10000, "Max Trees");
+            EditorGUILayout.IntSlider(vegetationTreeSpacing, 1, 50, "Tree Spacing");
+
+            vegetationRules = GUITableLayout.DrawTable(vegetationRules, serializedObject.FindProperty("vegetationRules"));
+            GUILayout.Space(20);
+            EditorGUILayout.BeginHorizontal();
+            if (GUILayout.Button("Add"))
+            {
+                terrain.AddNewVegetationMesh();
+            }
+            if (GUILayout.Button("Remove"))
+            {
+                terrain.RemoveVegetationMesh();
+            }
+            EditorGUILayout.EndHorizontal();
+            if (GUILayout.Button("Apply Vegetation"))
+            {
+                terrain.SetVegetation();
+            }
         }
 
         //Reset Terrain
@@ -309,6 +345,10 @@ public class CustomTerrainEditor : Editor {
         if (GUILayout.Button("Reset Terrain"))
         {
             terrain.ResetTerrain();
+        }
+        if (GUILayout.Button("Generate Random Terrain"))
+        {
+            terrain.GenerateRandomTerrain();    
         }
 
         serializedObject.ApplyModifiedProperties();

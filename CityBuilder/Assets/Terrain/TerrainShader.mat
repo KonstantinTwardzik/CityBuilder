@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: TerrainShader
-  m_Shader: {fileID: 4800000, guid: eab0538d9d5746246806a9611c04ac4d, type: 3}
+  m_Shader: {fileID: 4800000, guid: 81d02e8644315b742b154842a3a2f98c, type: 3}
   m_ShaderKeywords: _ALBEDOCONTRIBUTION _COLORMAP _HEIGHTMAP _HEIGHTMAP0 _HEIGHTMAP1
     _HEIGHTMAP2 _HEIGHTMAP3 _LAYEREDLIT_4_LAYERS _MASKMAP0 _MASKMAP1 _MASKMAP2 _MASKMAP3
     _NORMALMAP _NORMALMAP0 _NORMALMAP1 _NORMALMAP2 _NORMALMAP3 _NORMALMAP_TANGENT_SPACE
@@ -23,6 +23,7 @@ Material:
   - TransparentDepthPrepass
   - TransparentDepthPostpass
   - TransparentBackface
+  - MOTIONVECTORS
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -36,11 +37,11 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _BaseColorMap0:
         m_Texture: {fileID: 2800000, guid: e4c9c4ad3971bad4698e18ef13b3f125, type: 3}
-        m_Scale: {x: 60, y: 60}
+        m_Scale: {x: 30, y: 30}
         m_Offset: {x: 0, y: 0}
     - _BaseColorMap1:
-        m_Texture: {fileID: 2800000, guid: 09abaf7a37ce3574aa695f42438fedd4, type: 3}
-        m_Scale: {x: 60, y: 60}
+        m_Texture: {fileID: 2800000, guid: 39a4e02d1903de94faf0f6fdb85002dd, type: 3}
+        m_Scale: {x: 30, y: 30}
         m_Offset: {x: 0, y: 0}
     - _BaseColorMap2:
         m_Texture: {fileID: 2800000, guid: db7994f77b9d4b645b0a651565afac4c, type: 3}
@@ -172,7 +173,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MaskMap1:
-        m_Texture: {fileID: 2800000, guid: 24d21fe8cba02424289f8db1fed7a052, type: 3}
+        m_Texture: {fileID: 2800000, guid: 591fce40fc8325e4a8042db94d409cc1, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MaskMap2:
@@ -192,7 +193,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalMap1:
-        m_Texture: {fileID: 2800000, guid: 6437d6297ce74d1478a1bacd601ad1a9, type: 3}
+        m_Texture: {fileID: 2800000, guid: 2185d55725dbb7f42a4478c343143c43, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalMap2:
@@ -355,7 +356,7 @@ Material:
     - _EnableBlendModePreserveSpecularLighting: 1
     - _EnableFogOnTransparent: 1
     - _EnableGeometricSpecularAA: 0
-    - _EnableMotionVectorForVertexAnimation: 1
+    - _EnableMotionVectorForVertexAnimation: 0
     - _EnableSpecularOcclusion: 0
     - _EnableWind: 0
     - _EnergyConservingSpecularColor: 1
@@ -417,8 +418,8 @@ Material:
     - _InheritBaseNormal3: 0
     - _InitialBend: 1
     - _InvTilingScale: 0.1
-    - _InvTilingScale0: 0.016666668
-    - _InvTilingScale1: 0.016666668
+    - _InvTilingScale0: 0.033333335
+    - _InvTilingScale1: 0.033333335
     - _InvTilingScale2: 0.016666668
     - _InvTilingScale3: 0.016666668
     - _Ior: 1
@@ -463,8 +464,8 @@ Material:
     - _ShiverDrag: 0.2
     - _ShowLayer0: 1
     - _ShowLayer1: 1
-    - _ShowLayer2: 0
-    - _ShowLayer3: 0
+    - _ShowLayer2: 1
+    - _ShowLayer3: 1
     - _ShowMaterialReferences: 0
     - _Smoothness: 0
     - _Smoothness0: 1
@@ -472,7 +473,7 @@ Material:
     - _Smoothness2: 1
     - _Smoothness3: 1
     - _SmoothnessRemapMax: 1
-    - _SmoothnessRemapMax0: 0.20372857
+    - _SmoothnessRemapMax0: 0.22167662
     - _SmoothnessRemapMax1: 0.1578319
     - _SmoothnessRemapMax2: 0.03285053
     - _SmoothnessRemapMax3: 0.04180055
@@ -543,7 +544,7 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _BaseColor: {r: 0.49019608, g: 0.49019608, b: 0.49019608, a: 1}
-    - _BaseColor0: {r: 0.49019608, g: 0.49019608, b: 0.49019608, a: 1}
+    - _BaseColor0: {r: 0.6603774, g: 0.6603774, b: 0.6603774, a: 1}
     - _BaseColor1: {r: 0.49019608, g: 0.49019608, b: 0.49019608, a: 1}
     - _BaseColor2: {r: 0.49019608, g: 0.49019608, b: 0.49019608, a: 1}
     - _BaseColor3: {r: 0.735849, g: 0.735849, b: 0.735849, a: 1}

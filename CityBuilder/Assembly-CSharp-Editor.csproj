@@ -74,7 +74,6 @@
     <Compile Include="Assets\TexturePacker\Editor\TexturePackerStyles.cs" />
     <Compile Include="Assets\TexturePacker\Editor\TexturePackerWindow.cs" />
     <Compile Include="Assets\TexturePacker\Editor\TexturePreview.cs" />
-    <Compile Include="Assets\TutorialInfo\Scripts\Editor\ReadmeEditor.cs" />
     <Reference Include="Unity.RenderPipelines.Core.Editor">
       <HintPath>C:/Users/Gäste PC/Desktop/CityBuilder/CityBuilder/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.dll</HintPath>
     </Reference>

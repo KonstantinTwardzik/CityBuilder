@@ -67,6 +67,7 @@
     <Compile Include="Assets\GUITable\Examples\Scripts\LogoTable.cs" />
     <Compile Include="Assets\GUITable\Examples\Scripts\PropertyAttributeExample.cs" />
     <Compile Include="Assets\GUITable\Examples\Scripts\SimpleExample.cs" />
+    <Compile Include="Assets\Scripts\rotateWater.cs" />
     <Compile Include="Assets\Scripts\SimpleCameraController.cs" />
     <Compile Include="Assets\Terrain\TerrainEditor\CustomTerrain.cs" />
     <Compile Include="Assets\Terrain\TerrainEditor\CustomTerrainEditor.cs" />
@@ -78,10 +79,10 @@
     <Compile Include="Assets\TexturePacker\TextureInput.cs" />
     <Compile Include="Assets\TexturePacker\TexturePacker.cs" />
     <Compile Include="Assets\TexturePacker\TextureUtility.cs" />
-    <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <None Include="Assets\TexturePacker\Resources\TexturePacker.shader" />
     <None Include="Assets\UnityHDRI\Gareoult\Info.txt" />
     <None Include="Assets\UnityHDRI\KirbyCove\Info.txt" />
+    <None Include="Assets\Foliage Free\Readme.txt" />
     <Reference Include="Unity.RenderPipelines.Core.Editor">
       <HintPath>C:/Users/Gäste PC/Desktop/CityBuilder/CityBuilder/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.dll</HintPath>
     </Reference>
